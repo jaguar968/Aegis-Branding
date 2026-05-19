@@ -27,13 +27,13 @@ const Navbar = ({ cartCount, toggleCart, isLightMode, toggleTheme }) => {
               window.history.replaceState({}, '', '/');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className={`text-2xl font-bold tracking-wide ${isLightMode ? 'text-black' : 'text-white'}`}
+            className={`text-[12px] md:text-1xl lg:text-2xl font-bold tracking-wide ${isLightMode ? 'text-black' : 'text-white'}`}
           >
             AEGIS <span className="text-brand">BRANDING</span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-8 text-[10px] font-mono uppercase tracking-[0.2em] text-zinc-400">
+          <div className="hidden md:flex items-center gap-8 text-[9px] md:text-[10px] lg:text-[12px] font-mono uppercase tracking-[0.2em] text-zinc-400">
             {navLinks.map(link => (
               <Link 
                 key={link.name} 
@@ -98,7 +98,7 @@ const Navbar = ({ cartCount, toggleCart, isLightMode, toggleTheme }) => {
             exit={{ opacity: 0, y: -20 }}
             className="fixed inset-0 z-90 bg-[#050505] pt-32 px-10 md:hidden"
           >
-            <div className="flex flex-col gap-8 text-4xl font-bold tracking-tighter">
+            <div className="flex flex-col gap-8 text-sm font-bold tracking-tighter">
               {navLinks.map((link, i) => (
                 <motion.div
                   initial={{ x: -20, opacity: 0 }}

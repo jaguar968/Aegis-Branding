@@ -19,13 +19,13 @@ const HeroSection = () => {
           </div>
 
           {/* Headline */}
-          <h1 className="text-6xl md:text-9xl font-extrabold tracking-tighter leading-[0.9] max-w-5xl">
+          <h1 className="text-4xl md:text-6xl lg:text-8xl font-extrabold tracking-tighter leading-[0.9] max-w-5xl">
             Branding that <br /> 
             <span className="text-zinc-500">accelerates.</span>
           </h1>
 
           {/* Subheader */}
-          <p className="text-zinc-400 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
+          <p className="text-zinc-400 text-sm md:text-xl max-w-2xl font-light leading-relaxed">
             We partner with ambitious founders to build high-performance 
             digital products. No fluff, just precision engineering.
           </p>

@@ -147,7 +147,7 @@ const Showcase = () => {
   return (
     <section id="work" className="py-32 px-6 max-w-5xl mx-auto">
       <div className="mb-20">
-        <h2 className="text-6xl font-bold tracking-tighter text-white">
+        <h2 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tighter text-white">
           Selected <span className="italic text-zinc-500">Works</span>
         </h2>
       </div>
@@ -158,9 +158,9 @@ const Showcase = () => {
             <div 
               key={i} 
               // 'sticky top-0' makes them stack; 'zIndex: i' ensures the new card covers the old one
-              className="sticky top-0 w-full mb-[15vh] flex items-center justify-center"
+              className="sticky top-10 w-full mb-[5vh] md:mb-[15vh] flex items-center justify-center"
               style={{ 
-                paddingTop: `${i * 40}px`, 
+                paddingTop: `${i * 20}px`, 
                 zIndex: i 
               }}
             >
@@ -168,7 +168,7 @@ const Showcase = () => {
                 layoutId={project.title}
                 onClick={() => setSelectedProject(project)}
                 // 'group' is essential here to trigger the hover state for the text layer
-                className="w-full h-125 md:h-162.5 rounded-[2.5rem] border border-zinc-800 bg-[#080808] overflow-hidden shadow-2xl relative group cursor-pointer"
+                className="w-full h-80 md:h-162.5 rounded-3xl md:rounded-[2.5rem] border border-zinc-800 bg-[#080808] overflow-hidden shadow-2xl relative group cursor-pointer"
               >
                 {/* Project Image - We lower the opacity slightly so the card feels deep */}
                 <img 
@@ -189,19 +189,27 @@ const Showcase = () => {
                     - opacity-0 / group-hover:opacity-100: The reveal logic
                     - translate-y-4 / group-hover:translate-y-0: The slide-up logic
                 */}
-                <div className="absolute inset-0 p-12 flex flex-col justify-end z-20 bg-linear-to-t from-black via-black/50 to-transparent transition-all duration-500 ease-out opacity-0 translate-y-4 group-hover:opacity-100 group-hover:translate-y-0">
+                <div className="absolute inset-0 p-8 md:p-12 flex flex-col justify-end z-20 
+                  bg-linear-to-t from-black via-black/40 to-transparent 
+                  transition-all duration-500 ease-out 
                   
-                  <p className="text-brand font-mono text-xs uppercase tracking-[0.3em] mb-3">
+                  /* Mobile: Always visible, no slide */
+                  opacity-100 translate-y-0 
+                  
+                  /* Desktop: Hidden until hover, then slide up */
+                  md:opacity-0 md:translate-y-4 md:group-hover:opacity-100 md:group-hover:translate-y-0">
+                  
+                  <p className="text-brand font-mono text-[10px] md:text-xs uppercase tracking-[0.3em] mb-2 md:mb-3">
                     {project.category}
                   </p>
                   
-                  <h3 className="text-4xl md:text-6xl font-bold tracking-tighter text-white mb-6">
+                  <h3 className="text-xl md:text-6xl font-bold tracking-tighter text-white mb-4 md:mb-6">
                     {project.title}
                   </h3>
                   
                   <div className="flex items-center gap-4">
-                    <div className="h-px w-12 bg-brand transition-all duration-500 group-hover:w-20"></div>
-                    <p className="text-zinc-400 font-mono text-[10px] uppercase tracking-widest">
+                    <div className="h-px w-8 md:w-12 bg-brand transition-all duration-500 group-hover:w-20"></div>
+                    <p className="text-zinc-400 font-mono text-[9px] uppercase tracking-widest">
                       Explore Case Study _
                     </p>
                   </div>
@@ -226,7 +234,7 @@ const Showcase = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-100 flex items-end justify-center bg-black/90 backdrop-blur-sm p-4 md:p-10"
+            className="fixed inset-0 z-100 flex items-end justify-center bg-black/90 backdrop-blur-sm p-0 md:p-10"
           >
             <motion.div 
               initial={{ y: "100%" }}

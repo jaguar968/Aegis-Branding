@@ -19,7 +19,7 @@ const LogoWall = () => {
           }"
         >
           {[...logos, ...logos].map((logo, i) => (
-            <span key={i} className="text-2xl md:text-4xl font-bold text-zinc-800 tracking-tighter hover:text-brand transition-colors cursor-default">
+            <span key={i} className="text-xl md:text-4xl font-bold text-zinc-800 tracking-tighter hover:text-brand transition-colors cursor-default">
               {logo}
             </span>
           ))}

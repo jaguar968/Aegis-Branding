@@ -12,7 +12,7 @@ const Positioning = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-medium leading-[1.1] tracking-tighter"
+            className="text-2xl md:text-4xl lg:text-6xl font-medium leading-[1.1] tracking-tighter"
           >
             We build <span className="text-zinc-500">visual systems</span> for founders who believe that <span className="text-brand italic underline decoration-1 underline-offset-8">vague is the enemy</span> of growth.
           </motion.h2>

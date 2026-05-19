@@ -29,8 +29,8 @@ const Pricing = () => {
   return (
     <section className="py-32 px-6 max-w-7xl mx-auto">
       <div className="text-center mb-20">
-        <h2 className="text-5xl font-bold tracking-tighter uppercase italic">Investment</h2>
-        <p className="text-zinc-500 mt-4 font-mono text-2xl tracking-widest">Transparent pricing for bold founders.</p>
+        <h2 className="text-4xl md:text-4xl lg:text-6xl font-bold tracking-tighter uppercase italic">Investment</h2>
+        <p className="text-zinc-500 mt-4 font-mono text-xl tracking-widest">Transparent pricing for bold founders.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
