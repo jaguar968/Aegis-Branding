@@ -1,0 +1,88 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap');
+
+/* Custom Scrollbar for Chrome, Safari, and Edge */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e1b4b; /* Your brand color */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #5840FF;
+}
+
+@theme {
+  --color-brand: #5840FF;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Custom Indigo Shadow for that 'glow' effect */
+  --shadow-indigo-glow: 0 0 25px rgba(88, 64, 255, 0.35);
+}
+
+@utility no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
+/* The Inflection-style Grid Pattern */
+@utility bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.14) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+@utility noise-overlay {
+  position: fixed;
+  inset: -200%;
+  width: 400%;
+  height: 400%;
+  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
+  opacity: 0.04; /* Very subtle */
+  pointer-events: none;
+  z-index: 9999;
+  animation: noise 1s steps(2) infinite;
+}
+.sticky {
+  transition: transform 0.2s ease-out;
+}
+@keyframes noise {
+  0% { transform: translate(0,0) }
+  10% { transform: translate(-5%,-5%) }
+  20% { transform: translate(-10%,5%) }
+  30% { transform: translate(5%,-10%) }
+  40% { transform: translate(-5%,15%) }
+  50% { transform: translate(-10%,5%) }
+  60% { transform: translate(15%,0) }
+  70% { transform: translate(0,10%) }
+  80% { transform: translate(-15%,0) }
+  90% { transform: translate(10%,5%) }
+  100% { transform: translate(5%,0) }
+}
+@layer utilities {
+  .shadow-indigo-glow {
+    box-shadow: 0 0 20px rgba(88, 64, 255, 0.3);
+  }
+}
+
+/* Base resets for the Studio look */
+:root {
+  background-color: #050505;
+  color: white;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
