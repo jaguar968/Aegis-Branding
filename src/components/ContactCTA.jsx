@@ -16,7 +16,7 @@ const ContactCTA = () => {
 
   return (
     <section id="contact" className="py-32 px-6 bg-grid-pattern overflow-hidden">
-      <div className="max-w-5xl mx-auto bg-zinc-900/50 border border-zinc-800 rounded-[2.5rem] p-8 md:p-16 backdrop-blur-3xl relative">
+      <div className="max-w-5xl mx-auto bg-zinc-900/50 border border-zinc-800 rounded-[2.5rem] p-2 md:p-16 backdrop-blur-3xl relative">
         
         {/* Glow Effect */}
         <div className="absolute -top-24 -left-24 w-64 h-64 bg-brand/20 blur-[100px] rounded-full" />
@@ -60,11 +60,14 @@ const ContactCTA = () => {
           </div>
 
           {/* Actual Calendly Embed */}
-          <div className="mt-12 w-full rounded-2xl border border-zinc-800 bg-black/40 overflow-hidden shadow-2xl">
+          <div className="mt-12 -mx-4 md:mx-0 rounded-2xl border border-zinc-800 bg-black/40 overflow-hidden shadow-2xl">
             <div 
               className="calendly-inline-widget" 
-              data-url="https://calendly.com/ezekieljaguar/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1" 
-              style={{ minWidth: '320px', height: '700px' }} 
+              data-url="https://calendly.com/ezekieljaguar/new-meeting?hide_event_type_details=1&hide_gdpr_banner=1&background_color=0a0a0a&text_color=ffffff&primary_color=ffffff" 
+              style={{
+                minWidth: '320px', 
+                height: '750px'
+              }}
             />
           </div>
         </div>
