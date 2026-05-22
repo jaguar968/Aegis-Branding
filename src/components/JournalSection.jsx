@@ -32,7 +32,7 @@ const JournalSection = () => {
           {posts.map((post) => (
             <Link 
               key={post.slug}
-              to={`../content/${post.slug}`} 
+              to={`/journal/${post.slug}`} 
               className="group bg-black p-12 hover:bg-zinc-950 transition-all duration-700 block"
             >
               <div className="flex justify-between items-start mb-6">
