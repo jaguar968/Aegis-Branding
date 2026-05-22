@@ -78,7 +78,7 @@ const PostDetail = () => {
             </span>
           </div>
           
-          <h1 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.85] mb-6 uppercase italic">
+          <h1 className="text-2xl md:text-7xl font-bold md:tracking-tighter leading-[0.85] mb-6 uppercase italic">
             {postData.metadata.title}
           </h1>
           
