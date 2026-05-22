@@ -13,7 +13,9 @@ const PostDetail = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    fetch(`/content/${slug}.md`)
+    const filePath = `${window.location.origin}/content/${slug}.md`;
+
+    fetch(filePath)
         .then((res) => {
         const isHtml = res.headers.get('content-type')?.includes('text/html');
         if (!res.ok || isHtml) {
