@@ -13,27 +13,40 @@ const PostDetail = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
+    // 1. Guard: If no slug exists in the URL, don't attempt the fetch
+    if (!slug) return;
+
+    // 2. Absolute Path: Forces the browser to look at the root domain
     const filePath = `${window.location.origin}/content/${slug}.md`;
+    
+    // 3. Debug Trace: Open Console (F12) on Vercel to see this link
+    console.log("FETCH_INITIATED:", filePath);
 
     fetch(filePath)
-        .then((res) => {
-        const isHtml = res.headers.get('content-type')?.includes('text/html');
+      .then((res) => {
+        const contentType = res.headers.get('content-type');
+        const isHtml = contentType?.includes('text/html');
+
+        // If Vercel redirects to index.html or file is missing, throw error
         if (!res.ok || isHtml) {
-            throw new Error("NOT_FOUND");
+          console.error(`FETCH_FAILED: Status ${res.status}, Type: ${contentType}`);
+          throw new Error("NOT_FOUND");
         }
         return res.text();
-        })
-        .then((text) => {
-            const { data, content } = matter(text);
-            setPostData({ metadata: data, content: content });
-            setLoading(false);
-        })
-        .catch((err) => {
-            console.error("System Error:", err);
-            setError(true); // Trigger error state
-            setLoading(false);
-        });
-    }, [slug]);
+      })
+      .then((text) => {
+        // Parse the Markdown and Metadata
+        const { data, content } = matter(text);
+        setPostData({ metadata: data, content: content });
+        setLoading(false);
+        setError(false); // Reset error state on success
+      })
+      .catch((err) => {
+        console.error("SYSTEM_FAILURE:", err);
+        setError(true);
+        setLoading(false);
+      });
+  }, [slug]);
 
     // Error UI (The 'System Failure' look)
     if (error) {
