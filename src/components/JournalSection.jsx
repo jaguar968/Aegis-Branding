@@ -40,7 +40,7 @@ const JournalSection = () => {
                 <span className="text-zinc-800 font-mono text-[10px] group-hover:text-white transition-colors">01</span>
               </div>
               
-              <h3 className="text-3xl font-bold tracking-tighter uppercase italic group-hover:text-brand transition-all duration-500">
+              <h3 className="text-xl md:text-3xl font-bold tracking-tighter uppercase italic group-hover:text-brand transition-all duration-500">
                 {post.title}
               </h3>
               
