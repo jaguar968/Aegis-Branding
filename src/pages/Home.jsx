@@ -9,6 +9,7 @@ import Positioning from '../components/Positioning.jsx'
 import BentoGrid from '../components/BentoGrid.jsx'
 import Impact from '../components/Impact.jsx'
 import Showcase from '../components/Showcase.jsx'
+import JournalSection from '../components/JournalSection';
 import Pricing from '../components/Pricing.jsx'
 import Methodology from '../components/Methodology.jsx'
 import ContactCTA from '../components/ContactCTA.jsx'
@@ -59,7 +60,8 @@ const Home = () => {
       <Positioning />
       <BentoGrid /> 
       <Impact />
-      <Showcase /> 
+      <Showcase />
+      <JournalSection /> 
       <Pricing />
       <Methodology />
       <ContactCTA />

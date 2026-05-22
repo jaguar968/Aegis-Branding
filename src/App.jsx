@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'; // <--- Add this line
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useParams, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import SystemLoader from './components/SystemLoader';
 import ScrollToTop from './components/ScrollToTop';
@@ -9,6 +9,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Marketplace from './pages/Marketplace';
+import PostDetail from './pages/PostDetail';
 import Navbar from './components/Navbar';
 import Cursor from './components/Cursor';
 import Sidebar from './components/Sidebar'; 
@@ -79,6 +80,7 @@ function AppContent() {
             <Route path="/about" element={<About />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/journal/:slug" element={<PostDetail />} />
           </Routes>
         </AnimatePresence>
       </div>
@@ -86,7 +88,10 @@ function AppContent() {
     </main>
   );
 }
-
+const PostDetailWrapper = () => {
+  const { postSlug } = useParams();
+  return <PostDetail postSlug={postSlug} />;
+};
 export default function App() {
   return (
     <Router>

@@ -12,6 +12,7 @@ const Navbar = ({ cartCount, toggleCart, isLightMode, toggleTheme }) => {
     { name: "Services", path: "/#services" },
     { name: "Process", path: "/#process" },
     { name: "About", path: "/about" },
+    
 
   ];
 

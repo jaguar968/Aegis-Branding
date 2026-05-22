@@ -1,5 +1,7 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;700;800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
 
 /* Custom Scrollbar for Chrome, Safari, and Edge */
 ::-webkit-scrollbar {
@@ -47,7 +49,6 @@
   inset: -200%;
   width: 400%;
   height: 400%;
-  background-image: url('https://grainy-gradients.vercel.app/noise.svg');
   opacity: 0.04; /* Very subtle */
   pointer-events: none;
   z-index: 9999;
